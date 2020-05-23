@@ -1,5 +1,5 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import Vue from "vue"
+import Vuex from "vuex"
 import mutations from './mutations'
 import actions from './actions'
 
@@ -13,32 +13,3 @@ export default new Vuex.Store({
   mutations,
   actions
 });
-
-// export default new Vuex.Store({
-//   state: {
-//     address: "",
-//     zip: ""
-//   },
-//   mutations: {
-//     getAddress(state, payload) {
-//       state.zip = payload.zip;
-//       state.address = payload.address;
-//     }
-//   },
-//   actions: {
-//     async getAddressAction(context, zipCode) {
-//       const addressInfo = {
-//         address: "",
-//         zip: zipCode
-//       };
-//       await axios
-//         .get("https://api.zipaddress.net/?", {
-//           params: { zipcode: zipCode }
-//         })
-//         .then(res => {
-//           addressInfo.address = res.data.data.fullAddress;
-//         });
-//       context.commit("getAddress", addressInfo);
-//     }
-//   }
-// });
