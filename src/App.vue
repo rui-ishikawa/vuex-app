@@ -7,11 +7,11 @@
 </template>
 
 <script>
-import store from './store'
+// import store from './store/address'
 import { mapState } from "vuex"
 
 export default {
-  store,
+  // store,
   name: 'App',
   data() {
     return {
