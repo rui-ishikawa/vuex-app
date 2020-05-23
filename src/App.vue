@@ -1,8 +1,8 @@
 <template>
   <div>
-    <p>counter: {{ counter }}</p>
-    <button @click="incrementCount()">+1</button>
-    <button @click="incrementCount(5)">+5</button>
+    <p>住所: {{ address }}</p>
+    <input type="text" v-model="zip" />
+    <button @click="getAddress">検索</button>
   </div>
 </template>
 
@@ -13,15 +13,20 @@ import { mapState } from "vuex"
 export default {
   store,
   name: 'App',
+  data() {
+    return {
+      zip: ""
+    };
+  },
   computed: {
-    // state から
-    ...mapState(['counter'])
+    ...mapState({
+      address: state => state.address
+    }),
   },
   methods: {
-    incrementCount(n = 1) {
-      // Actionsへ
-      this.$store.dispatch("incActionCounter", { inc: n });
-    }
+    getAddress() {
+      this.$store.dispatch("getAddressAction", this.zip);
+    }    
   }  
 }
 </script>
